@@ -1,0 +1,52 @@
+<configuration>
+	<!-- 数据库 start -->
+	<property>
+	  <name>javax.jdo.option.ConnectionURL</name>
+	  <value>jdbc:mysql://localhost:3306/hive_meta</value>
+	  <description>mysql连接</description>
+	</property>
+
+	<property>
+	  <name>javax.jdo.option.ConnectionDriverName</name>
+	  <value>com.mysql.jdbc.Driver</value>
+	  <description>mysql驱动</description>
+	</property>
+
+	<property>
+	  <name>javax.jdo.option.ConnectionUserName</name>
+	  <value>hive</value>
+	  <description>数据库使用用户名</description>
+	</property>
+
+	<property>
+	  <name>javax.jdo.option.ConnectionPassword</name>
+	  <value>12345678</value>
+	  <description>数据库密码</description>
+	</property>
+	<!-- 数据库 end -->
+	<!-- 本地 start -->
+	<property> 
+	  <name>hive.metastore.warehouse.dir</name>
+	  <value>/hive/warehouse</value>
+	  <description>hive使用的HDFS目录</description>
+	</property>
+	<!-- HDFS end -->
+
+	
+	<property> 
+	  <name>hive.cli.print.current.db</name>
+	  <value>true</value>
+	</property>
+	<!-- 其它 end -->
+	
+	<!--	Zookeeper	-->
+	<property>
+		<name>hbase.zookeeper.quorum</name>
+		<value>nn1.hadoop:2181,nn2.hadoop:2181,s1.hadoop:2181</value>
+	</property>
+	
+	<property>
+		<name>zookeeper.session.timeout</name>
+		<value>1200000</value>
+	</property>
+</configuration>
